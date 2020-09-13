@@ -9,6 +9,12 @@ class TestUser (unittest.TestCase):
         unittest.TestCase: TestCase class that helps in creating test cases
     '''
 
+    def tearDown(self):
+        '''
+        tearDown method that cleans up after each test case has run
+        '''
+        User.user_list = []
+
     def setUp(self):
         '''
         Set up method to run before each test case

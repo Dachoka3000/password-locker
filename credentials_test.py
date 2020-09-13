@@ -9,6 +9,12 @@ class TestCredentials(unittest.TestCase):
         unittest.TestCase: TestCase class that helps in creating test cases
     '''
 
+    def tearDown(self):
+        '''
+        tearDown method that cleans up after each tesst case is run
+        '''
+        Credentials.credentials_list = []
+
     def setUp(self):
         '''
         Setup method to run before each test cases

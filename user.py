@@ -31,7 +31,7 @@ class User:
         Method that takes in a name and returns a user that matches that name
         
         Args:
-            name: user name to search for
+            uname: user name to search for
         Returns;
             user account that matches that username
         '''
@@ -39,3 +39,20 @@ class User:
         for user in cls.user_list:
             if user.username == uname:
                 return user
+
+    @classmethod
+    def user_exist(cls, uname):
+        '''
+        Method that checks if a user exists from the user list
+        
+        Args:
+            uname: username to search if a user exists
+        Returns:
+            Boolean: True or false depending if the user exists
+        '''
+
+        for user in cls.user_list:
+            if user.username == uname:
+                return True
+        return False
+            

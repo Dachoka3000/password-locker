@@ -23,3 +23,9 @@ class Credentials:
         save_credentials method to save objects into credentials list
         '''
         Credentials.credentials_list.append(self)
+
+    def delete_credentials(self):
+        '''
+        method that deletes a saved credential from the credentials_list
+        '''
+        Credentials.credentials_list.remove(self)

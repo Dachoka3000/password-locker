@@ -27,7 +27,12 @@ While running run.py, type in the following short codes:
 - vw - to view the credentials you have saved in your account
 - dl - to delete a credential
 - cc - to create a new credential
-- ex - to exit application
+- sc - to search for a credential
+- x - to exit application
+
+To run tests, run the following commands:
+* $ python3.8 user_test.py
+* $ python3.8 credentials_test.py
 
 
 

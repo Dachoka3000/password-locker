@@ -99,8 +99,6 @@ def copy_credential(account):
 
 def main():
     print("Hello. Welcome to password locker.")
-    print("Please enter your name:....")
-    uzername = input()
     
     while True:
         print("What would you like to do?\n Click \n s to sign up \n l to log in \n x to exit")
@@ -118,7 +116,10 @@ def main():
             password = input()
 
             save_user(create_user(username, email, password))
+            print('\n')
+            print("-"*80)
             print(f'Account for {username} has been created. Log in to continue')
+            print("-"*80)
             print("\n")
             
 
@@ -134,6 +135,7 @@ def main():
 
             if old_user:
                 current_user = find_user(username)
+                print('\n')
                 print(f"hey {username}, you are now logged in")
                 print("-"*50)
 
@@ -157,7 +159,6 @@ def main():
                             print("Enter the length of your desired password in numerical digits")
                             length = int(input())
                             pass_word = get_password(length)
-                            print('\n')
                             print("-"*50)
                             print(f"Password for {account} is {pass_word}")
                             print('\n')

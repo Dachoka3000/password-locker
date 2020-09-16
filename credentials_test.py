@@ -1,4 +1,5 @@
 import unittest
+import pyperclip
 from credentials import Credentials
 
 class TestCredentials(unittest.TestCase):
@@ -27,8 +28,8 @@ class TestCredentials(unittest.TestCase):
         '''
 
         self.assertEqual(self.new_credentials.account, "Twitter")
-        self.assertEqual(self.new_credentials.username, "MaryX")
-        self.assertEqual(self.new_credentials.password,"maryx1000")
+        self.assertEqual(self.new_credentials.user_name, "MaryX")
+        self.assertEqual(self.new_credentials.pass_word,"maryx1000")
 
     def test_save_credentials(self):
         '''
@@ -68,7 +69,7 @@ class TestCredentials(unittest.TestCase):
 
         found_credential = Credentials.find_by_account("Snapchat")
 
-        self.assertEqual(found_credential.password, test_credential.password)
+        self.assertEqual(found_credential.pass_word, test_credential.pass_word)
 
     def test_credentials_exists(self):
         '''
@@ -89,6 +90,16 @@ class TestCredentials(unittest.TestCase):
         method that returns a list of all credentials saved
         '''
         self.assertEqual(Credentials.display_credentials(), Credentials.credentials_list)
+
+    def test_copy_details(self):
+        '''
+        test to confirm that we are copying the details from a found account
+        '''
+
+        self.new_credentials.save_credentials()
+        Credentials.copy_details("Snapchat")
+
+        self.assertEqual(self.new_credentials.user_name, pyperclip.paste())
 
 
 

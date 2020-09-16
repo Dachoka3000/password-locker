@@ -26,7 +26,7 @@ class User:
         User.user_list.append(self)
 
     @classmethod
-    def find_by_username(cls, uname):
+    def find_by_username(cls, username):
         '''
         Method that takes in a name and returns a user that matches that name
         
@@ -37,11 +37,11 @@ class User:
         '''
 
         for user in cls.user_list:
-            if user.username == uname:
+            if user.username == username:
                 return user
 
     @classmethod
-    def user_exist(cls, uname):
+    def user_exist(cls, username):
         '''
         Method that checks if a user exists from the user list
         
@@ -52,7 +52,7 @@ class User:
         '''
 
         for user in cls.user_list:
-            if user.username == uname:
+            if user.username == username:
                 return True
         return False
             

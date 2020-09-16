@@ -6,7 +6,7 @@ class Credentials:
     '''
     credentials_list = []
 
-    def __init__(self, account, username, password):
+    def __init__(self, account, user_name, pass_word):
         '''
         __init__ method that helps us define properties for credential objects
         
@@ -17,8 +17,8 @@ class Credentials:
         '''
 
         self.account = account
-        self.username = username
-        self.password = password
+        self.user_name = user_name
+        self.pass_word = pass_word
 
     def save_credentials(self):
         '''
@@ -33,7 +33,7 @@ class Credentials:
         Credentials.credentials_list.remove(self)
 
     @classmethod
-    def find_by_account(cls, acc):
+    def find_by_account(cls, account):
         '''
         Method that takes in an account name and returns credentials matching that account
         
@@ -44,11 +44,11 @@ class Credentials:
         '''
 
         for credential in cls.credentials_list:
-            if credential.account == acc:
+            if credential.account == account:
                 return credential
 
     @classmethod
-    def credentials_exist(cls, acc):
+    def credentials_exist(cls, account):
         '''
         Method that checks of a credential exists in the credentials list
         
@@ -59,7 +59,7 @@ class Credentials:
         '''
 
         for credential in cls.credentials_list:
-            if credential.account == acc:
+            if credential.account == account:
                 return True
         return False
 
@@ -71,11 +71,11 @@ class Credentials:
         return cls.credentials_list
 
     @classmethod
-    def copy_details(cls, acc):
+    def copy_details(cls, account):
         '''
         method to copy account details to machine clipboard using pyperclip
         '''
-        credential_found = Credentials.find_by_account(acc)
-        pyperclip.copy(credential_found.username)
+        credential_found = Credentials.find_by_account(account)
+        pyperclip.copy(credential_found.user_name)
 
 

@@ -31,7 +31,7 @@ class User:
         Method that takes in a name and returns a user that matches that name
         
         Args:
-            uname: user name to search for
+            username: user name to search for
         Returns;
             user account that matches that username
         '''
